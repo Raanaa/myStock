@@ -1,28 +1,24 @@
-This README would normally document whatever steps are necessary to get the application up and running.
+# README
 
-run "bundle install"
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-run "rake db:migrate"
+Things you may want to cover:
 
-run "rails s"
+* Ruby version
 
-installed gems
+* System dependencies
 
-gem 'stock_quote'
-gem 'devise'
-sign up with your email and password
+* Configuration
 
-you can add assets to track in the date base by typing its symbol and hit "Save Asset"
+* Database creation
 
-you can show the details of any asset
+* Database initialization
 
-you can update any asset to get it's latest price now
+* How to run the test suite
 
-you can invest in any asset with any amount of money
+* Services (job queues, cache servers, search engines, etc.)
 
-you can access all your tracked assets
+* Deployment instructions
 
-your investment is calculated by this equation :
-( your_invest_value * Asset_change_percent ) + your invest value
-
-Demo on Heroku : https://trackstockprice.herokuapp.com/
+* ...

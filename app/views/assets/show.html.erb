@@ -1,0 +1,51 @@
+<head>
+  <style>
+  table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  }
+  </style>
+</head>
+<body>
+  <h2><%= @asset.symbol %></h2>
+  <table style="width:100%">
+    <tr>
+      <th>company_name</th>
+      <th>latest_price</th>
+      <th>close</th>
+      <th>open</th>
+      <th>change</th>
+      <th>change_percent</th>
+      <th>updated_at</th>
+      <th>invest value</th>
+      <th>investment become</th>
+    </tr>
+    <tr>
+      <td><%= @asset.company_name %></td>
+      <td>$<%= @asset.latest_price %></td>
+      <td>$<%= @asset.close %></td>
+      <td>$<%= @asset.open %></td>
+      <td>$<%= @asset.change %></td>
+      <td><%= @asset.change_percent %></td>
+      <td><%= @asset.updated_at %></td>
+      <% invest_value = get_invest_value(@asset.id)%>
+      <% if invest_value.present? %>
+      <td>$<%= invest_value%></td>
+      <td>$<%= investment_become(invest_value , @asset.id)%></td>
+      <% else %>
+      <td>You have not invested yet</td>
+      <td>  ----------- </td>
+      <% end %>
+      <td>
+        <form action = "/invest" >
+          Please enter invest value.
+          <input type="decimal" name="invest_value">
+          <input type="hidden" name="asset_id"  value ="<%= @asset.id %>" >
+          <input type="submit"  value="Invest"/>
+        </form>
+      </td>
+      <td><%= link_to "Update", {:controller => "assets", :action => "update", :asset_id => @asset.id }%></td>
+    </tr>
+  </table>
+</body>
+</li><%= link_to 'Home', controller: 'assets' %></li>

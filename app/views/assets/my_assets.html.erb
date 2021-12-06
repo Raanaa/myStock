@@ -1,0 +1,31 @@
+<head>
+  <style>
+  table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  }
+  </style>
+</head>
+<h2>My Assets</h2>
+<table style="width:100%">
+  <tr>
+    <th>Symbol</th>
+    <th>company name</th>
+    <th>latest price</th>
+    <th>invest value</th>
+    <th>investment become</th>  
+  </tr>
+  <% @user_assets.each do |s| %>
+  <tr>
+    <td><%= get_symbol(s.asset_id) %></td>
+    <td><%= get_name(s.asset_id)%></td>
+    <td>$<%= get_price(s.asset_id)%></td>
+    <td>$<%=s.invest_value%></td>
+    <td>$<%= investment_become(s.invest_value , s.asset_id)%></td>
+    <td><%= link_to 'Show Details', {:controller => "assets", :action => "show", :asset_id => s['asset_id'] } %></td>
+    <td><%= link_to "Update", {:controller => "assets", :action => "update", :asset_id => s['id'] }%></td>
+  </tr>
+  <% end %>
+  
+</table>
+<%= link_to 'Home', controller: 'assets' %>

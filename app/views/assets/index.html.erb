@@ -1,0 +1,46 @@
+<head>
+  <style>
+  table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  }
+  </style>
+</head>
+<p><font size="4">current_user :</font><%= current_user.email %> <%= link_to('Logout', destroy_user_session_path, method: :delete) %></p>
+
+<p><font size="6"><%= link_to 'My Assets', controller: 'assets' , action: 'my_assets' %></font> Assets that I already invest in it</p>
+<%= form_with scope: :asset, url: @assets_path, local: true do |form| %>
+<p>
+  <%= form.label :Add_Asset_symbol %><br>
+  <%= form.text_field :symbol %>
+  only valid & new assets symbol added to our db
+</p>
+<p><%= form.submit %></p>
+<% end %>
+______________________________________________________________________________________________________
+<h2>All Saved Assets in db</h2>
+<table style="width:100%">
+  <tr>
+    <th>Symbol</th>
+    <th>company_name</th>
+    <th>latest_price</th>
+  </tr>
+  <% @all_assets.each do |s| %>
+  <tr>
+    <td><%= s.symbol %></td>
+    <td><%= s.company_name %></td>
+    <td>$<%= s.latest_price %></td>
+    <td><%= link_to 'Show Details', {:controller => "assets", :action => "show", :asset_id => s['id'] } %></td>
+    <td>
+      <form action = "/invest" >
+        Please enter invest value.
+        <input type="decimal" name="invest_value">
+        <input type="hidden" name="asset_id"  value ="<%= s['id'] %>" >
+        <input type="submit"  value="Invest"/>
+      </form>
+    </td>
+    <td><%= link_to "Update", {:controller => "assets", :action => "update", :asset_id => s['id'] }%></td>
+  </tr>
+  <% end %>
+  
+</table>
