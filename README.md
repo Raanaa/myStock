@@ -1,3 +1,5 @@
+# track stock market prices.
+
 You will develop a backend that will have tracking of certain stock market prices.
 Given a set of some stock market assets that the server will keep track of (e.g.
 google, apple, netflix, ...), we need to constantly update each asset price on a daily
@@ -13,25 +15,23 @@ portfolio of assets in a single call.
 
 Endpoints: 
 
-create portfolio (with data of how much to invest in a set of selected
-assets)
+     *  create portfolio (with data of how much to invest in a set of selected
+        assets)
+
+     *  get portfolio status  Finally the user would come back later to see how their investment have become
+        (the $1000 invested in asset x are now $1100 and the $600 invested in asset y
+        are now $500)
 
 
-Finally the user would come back later to see how their investment have become
-(the $1000 invested in asset x are now $1100 and the $600 invested in asset y
-are now $500)
 
 
-Endpoints: 
-
-get portfolio status
 
 
-You are required to develop the RESTful API only.
-Bonus: 
-
-The user can have multiple portfolios that he can track.
-
-
-Develop a simple web interface for the RESTful API developed in the previous
+You are required to develop the RESTful API only. OR Develop a simple web interface for the RESTful API developed in the previous
 section.
+
+
+Bonus::::::: The user can have multiple portfolios that he can track.
+
+
+
