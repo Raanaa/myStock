@@ -1,24 +1,37 @@
-# README
+You will develop a backend that will have tracking of certain stock market prices.
+Given a set of some stock market assets that the server will keep track of (e.g.
+google, apple, netflix, ...), we need to constantly update each asset price on a daily
+basis. So basically there will be endpoints to add an asset, update asset price, list
+assets, and get asset.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+In addition the system would allow users to set that they would invest in any
+asset they choose with any amount of money (no actual payment is involved; it
+just marks that this user invested $1000 in asset x for instance). A user can set a
+portfolio of assets in a single call.
 
-* Ruby version
 
-* System dependencies
+Endpoints: 
 
-* Configuration
+create portfolio (with data of how much to invest in a set of selected
+assets)
 
-* Database creation
 
-* Database initialization
+Finally the user would come back later to see how their investment have become
+(the $1000 invested in asset x are now $1100 and the $600 invested in asset y
+are now $500)
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+Endpoints: 
 
-* Deployment instructions
+get portfolio status
 
-* ...
+
+You are required to develop the RESTful API only.
+Bonus: 
+
+The user can have multiple portfolios that he can track.
+
+
+Develop a simple web interface for the RESTful API developed in the previous
+section.
